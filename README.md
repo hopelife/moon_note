@@ -180,3 +180,24 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+
+- run server
+
+```bash
+yarn start
+
+~~~ result
+Failed to compile.
+
+./src/globalStyles.js
+Attempted import error: 'injectGlobal' is not exported from 'styled-components'.
+```
+
+
+- src/globalStyles.js
+```
+import { createGlobalStyle } from 'styled-components';
+
+createGlobalStyle`
+```
+
