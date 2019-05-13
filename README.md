@@ -127,3 +127,56 @@ src/Components
 src/Routes
 ```
 
+### 1.2 Offline Apollo Configuration
+
+- apollo.js
+```javascript
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { withClientState } from "apollo-link-state";
+import { ApolloLink } from "apollo-link";
+
+import { typeDefs, defaults, resolvers } from "./clientState";
+
+const cache = new InMemoryCache();
+
+const stateLink = withClientState({
+  cache,
+  typeDefs,
+  defaults,
+  resolvers
+});
+
+const client = new ApolloClient({
+  cache,
+  link: ApolloLink.from([stateLink])
+});
+
+export default client;
+```
+
+
+- src/clientState.js
+```javascript
+export const defaults = {};
+export const resolvers = {};
+export const typeDefs = {};
+```
+
+
+- src/index.js
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { ApolloProvider } from "react-apollo";
+import client from "./apollo";
+import "./globalStyles";
+
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById("root")
+);
+```
