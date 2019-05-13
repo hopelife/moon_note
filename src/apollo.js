@@ -15,6 +15,7 @@ const stateLink = withClientState({
 });
 
 const client = new ApolloClient({
+  // connectToDevTools: true,
   cache,
   link: ApolloLink.from([stateLink])
 });

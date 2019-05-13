@@ -237,3 +237,41 @@ export const resolvers = {
 };
 ```
 
+
+### 1.3.1 Intermission for Bug Fixing
+
+- src/App.js
+
+```javascript
+import React from 'react';
+import {Query} from 'react-apollo'
+import {GET_NOTES} from './queries'
+
+function App() {
+  return (
+    <div className="App">
+      <Query query={GET_NOTES}>{()=> null}</Query>
+    </div>
+  );
+}
+
+export default App;
+```
+
+- src/queries.js
+
+```javascript
+import gql from "graphql-tag";
+
+export const GET_NOTES = gql`
+  {
+#    notes @client {
+     notes {
+      id
+      title
+      content
+    }
+  }
+`;
+
+```
