@@ -1,62 +1,3 @@
-# Moon Note
-> Offline Markdown Note Taking App built with Apollo
-
-## 참고 자료
-
-- [github/nomadcoders/nomad-notes](https://github.com/nomadcoders/nomad-notes)
-- [github/hopelife/moon_note](https://github.com/hopelife/moon_note)
-
-
-## 강좌
-
-### 1.1 Set Up
-
-#### setup
-
-- install
-```bash
-npx create-react-app moon_note
-cd moon_note
-
-git remote add origin https://github.com/hopelife/moon_note.git
-```
-
-- delete files(/src)
-```
-App.css
-App.test.js
-Index.css
-logo.svg
-serviceWorker.js
-```
-
-- /src/index.js
-```javascript
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "./globalStyles";
-
-ReactDOM.render(<App />, document.getElementById("root"));
-```
-
-
-- /src/App.js
-```javascript
-import React from 'react';
-
-function App() {
-  return (
-    <div className="App" />
-  );
-}
-
-export default App;
-```
-
-
-- src/globalStyles.js
-```javascript
 import { injectGlobal } from "styled-components";
 
 injectGlobal`
@@ -114,16 +55,3 @@ injectGlobal`
         }
     }
 `;
-```
-
-- yarn add
-```bash
-yarn add apollo-cache-inmemory apollo-client graphql react-apollo styled-components styled-reset react-textarea-autosize graphql-tag react-router-dom apollo-link-state
-```
-
-- create folder
-```
-src/Components
-src/Routes
-```
-
