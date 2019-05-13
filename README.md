@@ -3,6 +3,7 @@
 
 ## 참고 자료
 
+- [youtube::Build an Offline Note Taking App with React, Apollo and GraphQL](https://www.youtube.com/playlist?list=PL7jH19IHhOLMTVBzUkbN74h1nyXW7VhYV)
 - [github/nomadcoders/nomad-notes](https://github.com/nomadcoders/nomad-notes)
 - [github/hopelife/moon_note](https://github.com/hopelife/moon_note)
 
@@ -265,8 +266,7 @@ import gql from "graphql-tag";
 
 export const GET_NOTES = gql`
   {
-#    notes @client {
-     notes {
+    notes @client {
       id
       title
       content

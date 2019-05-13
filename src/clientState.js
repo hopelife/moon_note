@@ -1,5 +1,12 @@
 export const defaults = {
-  notes: []
+  notes: [
+    {
+      __typename: "Note",
+      id: 1,
+      title: "First",
+      content: "Second"
+    }
+  ]
 };
 
 export const typeDefs = [
@@ -13,8 +20,8 @@ export const typeDefs = [
         note(id: Int!): Note
     }
     type Mutation{
-        createNote(title: String!, content: String!)
-        editNote(id: String!, title: String!, content:String!)
+        createNote(title: String!, content: String!): Note
+        editNote(id: String!, title: String!, content:String!): Note
     }
     type Note{
         id: Int!
@@ -26,6 +33,10 @@ export const typeDefs = [
 
 export const resolvers = {
   Query: {
-    notes: () => true
+    note: (_, variables, { getCacheKey }) => {
+      const id = getCacheKey({ __typename: "Note", id: variables.id });
+      console.log(id);
+      return null;
+    }
   }
 };
