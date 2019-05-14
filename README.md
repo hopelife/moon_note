@@ -239,7 +239,7 @@ export const resolvers = {
 ```
 
 
-### 1.3.1 Intermission for Bug Fixing
+### 1.3.1 Intermission for Bug Fixing(Not Required ***)
 
 - src/App.js
 
@@ -275,3 +275,72 @@ export const GET_NOTES = gql`
 `;
 
 ```
+
+
+### 1.4 Note Query part One
+
+
+
+### 1.5 Note Query part Two
+
+- Query
+```
+{
+  notes @client {
+    id
+    title
+    content
+  }
+}
+
+{
+  note(id: 1) @client {
+    id
+    title
+    content
+  }
+}
+```
+
+### 1.6 Add Note Mutation
+
+- Mutation
+mutation {
+  createNote(title: "Test Again", content: "This is test note again") @client {
+    id
+    title
+  }
+}
+
+
+
+### 1.7 Edit Note Mutation
+
+
+
+
+### 1.8 Router and Routes
+
+
+
+### 1.9 Notes Route
+
+
+
+### 1.10 Note Route
+
+
+
+### 1.11 Add Note Route
+
+
+
+### 1.12 Edit Note Route
+
+
+
+### 1.13 Saving the Notes Offline
+
+
+
+### 1.14 Restoring Offline Notes

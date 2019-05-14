@@ -4,7 +4,6 @@ import { withClientState } from "apollo-link-state";
 import { ApolloLink } from "apollo-link";
 
 import { typeDefs, defaults, resolvers } from "./clientState";
-// import { typeDefs, defaults, resolvers } from "./schema";
 
 const cache = new InMemoryCache();
 
@@ -16,6 +15,7 @@ const stateLink = withClientState({
 });
 
 const client = new ApolloClient({
+  connectToDevTools: true,
   cache,
   link: ApolloLink.from([stateLink])
 });
