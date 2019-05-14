@@ -316,6 +316,13 @@ mutation {
 
 ### 1.7 Edit Note Mutation
 
+- Mutation
+mutation {
+  editNote(id:1, title: "Hello!!", content: "update Note") @client {
+    id
+    title
+  }
+}
 
 
 
