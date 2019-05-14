@@ -336,7 +336,9 @@ mutation {
 
 ### 1.10 Note Route
 
-
+```
+yarn add react-markdown-renderer
+```
 
 ### 1.11 Add Note Route
 
